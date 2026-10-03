@@ -62,6 +62,28 @@ The main technical challenges included:
 - Validating application and service functionality after migration
 
 ---
+## Migration Architecture
+
+```mermaid
+flowchart LR
+    A[Legacy Physical Server<br/>CentOS 7] --> B[Full Image Backup<br/>Clonezilla]
+    B --> C[Backup Validation]
+    C --> D[New Physical Server<br/>PERC RAID / Virtual Disk]
+    D --> E[Partition Reconstruction]
+    E --> F[LVM Reconstruction]
+    F --> G[Filesystem Restore]
+    G --> H[Boot / GRUB Recovery]
+    H --> I[Network Validation]
+    I --> J[System Service Validation]
+    J --> K[Application Validation]
+    K --> L[Migration Complete]
+
+    B -. Rollback Path .-> A
+```
+
+---
+
+## Migration Strategy
 
 ## Migration Strategy
 
