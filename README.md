@@ -33,6 +33,74 @@ The server hardware needed to be replaced while preserving:
 A full system migration was therefore selected instead of a clean OS reinstall.
 
 ---
+## What I Solved
+
+This project addressed a common legacy infrastructure problem: replacing aging physical server hardware without rebuilding a business-critical Linux application environment from scratch.
+
+The migration had several important constraints:
+
+- The existing CentOS 7 environment needed to be preserved
+- The application stack could not be safely rebuilt from original installation media or documentation
+- The source and target servers had different storage characteristics
+- LVM and filesystem layouts needed to be reconstructed on the new hardware
+- The migrated server had to remain bootable and operational after restoration
+- A rollback path had to remain available until post-migration validation was complete
+
+The solution was designed around preserving the existing system state while moving it onto new physical hardware with a controlled backup, restore, storage reconstruction, and validation process.
+
+---
+
+## Business Value
+
+The migration provided value beyond simply replacing old hardware.
+
+### Reduced Infrastructure Risk
+
+The workload was moved away from aging server hardware, reducing the operational risk associated with physical hardware failure.
+
+### Avoided a High-Risk Application Rebuild
+
+Instead of rebuilding the legacy application environment from scratch, the existing working environment was preserved and restored onto the new server.
+
+This reduced the risk of:
+
+- Missing dependencies
+- Version compatibility problems
+- Lost configuration
+- Undocumented application behavior
+- Extended downtime
+
+### Preserved Business Continuity
+
+The migration strategy maintained the existing operating system, application configuration, data, and service environment.
+
+This allowed the new server to continue supporting the existing workload without requiring major application changes.
+
+### Maintained Rollback Capability
+
+The original system image and source environment were retained during the migration process.
+
+This provided a recovery path if the new environment failed validation.
+
+### Improved Future Maintainability
+
+The migration process produced a documented workflow covering:
+
+- System assessment
+- Backup
+- Storage reconstruction
+- LVM recovery
+- System restoration
+- Boot validation
+- Network validation
+- Application validation
+- Final acceptance checks
+
+This documentation can be reused for future server migrations and disaster recovery planning.
+
+### Extended the Life of a Legacy Application
+
+The project allowed an existing business application to continue operating on newer hardware without requiring an immediate application rewrite or replacement.
 
 ## Source Environment
 
