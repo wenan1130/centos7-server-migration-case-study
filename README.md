@@ -99,11 +99,6 @@ flowchart TD
 ---
 
 ## Migration Strategy
-```
-
----
-
-## Migration Strategy
 
 ```text
 Legacy CentOS 7 Server
@@ -134,3 +129,4 @@ Application Validation
         │
         ▼
 Migration Complete
+```
