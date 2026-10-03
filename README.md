@@ -1,5 +1,13 @@
 # CentOS 7 Legacy Server Migration Case Study
 
+### [CentOS 7 Legacy Server Migration](https://github.com/wenan1130/centos7-server-migration-case-study)
+
+Physical CentOS 7 server migration to new hardware,
+including backup, storage reconstruction, LVM restoration,
+boot recovery, and post-migration validation.
+
+**Key areas:** CentOS 7 · LVM · Backup & Recovery · Physical Server Migration · Boot Recovery · Validation
+
 ## Overview
 
 This case study documents the migration of a legacy CentOS 7 physical server to new server hardware while preserving the existing operating system and application environment.
