@@ -64,8 +64,6 @@ The main technical challenges included:
 ---
 ## Migration Architecture
 
-## Migration Architecture
-
 ```mermaid
 flowchart TD
     A[Legacy Physical Server<br/>CentOS 7]
