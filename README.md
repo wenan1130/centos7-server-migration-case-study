@@ -64,19 +64,34 @@ The main technical challenges included:
 ---
 ## Migration Architecture
 
+## Migration Architecture
+
 ```mermaid
-flowchart LR
-    A[Legacy Physical Server<br/>CentOS 7] --> B[Full Image Backup<br/>Clonezilla]
-    B --> C[Backup Validation]
-    C --> D[New Physical Server<br/>PERC RAID / Virtual Disk]
-    D --> E[Partition Reconstruction]
-    E --> F[LVM Reconstruction]
-    F --> G[Filesystem Restore]
-    G --> H[Boot / GRUB Recovery]
-    H --> I[Network Validation]
-    I --> J[System Service Validation]
-    J --> K[Application Validation]
-    K --> L[Migration Complete]
+flowchart TD
+    A[Legacy Physical Server<br/>CentOS 7]
+    B[Full Image Backup]
+    C[Backup Validation]
+    D[New Physical Server<br/>PERC RAID / Virtual Disk]
+    E[Partition Reconstruction]
+    F[LVM Reconstruction]
+    G[Filesystem Restore]
+    H[Boot / GRUB Recovery]
+    I[Network Validation]
+    J[System Service Validation]
+    K[Application Validation]
+    L[Migration Complete]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
 
     B -. Rollback Path .-> A
 ```
@@ -84,6 +99,9 @@ flowchart LR
 ---
 
 ## Migration Strategy
+```
+
+---
 
 ## Migration Strategy
 
